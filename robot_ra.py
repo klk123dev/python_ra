@@ -8,6 +8,15 @@ CHAT_ID = "5397929116"  # 👈 Envía "Hola" a @RawDataBot para saberlo
 RA_URL = "https://es.ra.co/events/2072940"  # 👈 URL de tu evento
 
 bot = Bot(token=TOKEN)
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Robot activo 🚀"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)
 
 while True:
     try:
