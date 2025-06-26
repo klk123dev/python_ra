@@ -27,7 +27,7 @@ while True:
         page = requests.get(RA_URL, headers=headers, timeout=10).text
         
         # Detecta cambios (actualizado para RA 2025)
-        if "Ticket sales have ended" not in page.lower() and "agotado" not in page.lower():
+        if "Ticket sales have ended" not in page.lower() or True:
             bot.send_message(
                 chat_id=CHAT_ID,
                 text=f"🚨 ¡ENTRADAS DISPONIBLES! 🎟️\n{RA_URL}"
